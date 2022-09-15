@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/3033e139cd.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script async defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1><a class="navbar-brand" href="https://lectortmo.com/"><i class=" fa fa-solid fa-book"></i> Tu Manga Online</a></h1>
+        </nav>
+    </header>
+    <main>
+        <section id="newComment" class="w-75 mx-auto my-5">
+            <form class="d-flex flex-column">
+                <div class="wrapperNewComment d-flex flex-row">
+                    <div id="wrapperProfile" class="d-flex flex-column w-20 mr-5">
+                        <img src="https://secure.gravatar.com/avatar/f07de905db2517e1b7c8d218cb73878b?s=150&d=mm&r=g" alt="profilePicturePreview" id="profilePicturePreview" name="profilePicturePreview" class="profilePicturePreview img-thumbnail">
+                        <!-- <button class="btn btn-outline-secondary mt-2"><i class=" fa fa-solid fa-file-picture-o"></i> Subir</button> -->
+                        <label class="btn btn-outline-secondary mt-2" for="profilePicInput"><i class=" fa fa-solid fa-file-picture-o"></i> Subir</label>
+                        <input class="hideInput" type="file" id="profilePicInput" name="profilePicInput" accept="image/png, image/jpeg">
+                        
+                    </div>
+                    <div id="wrapperCommentInput" class="d-flex flex-column w-75">
+                        <input type="text" id="usernameInput" name="usernameInput" placeholder="Usuario" required="true">
+                        <textarea id="commentContentInput" name="commentContentInput" placeholder="Únete a la conversación..." required="true" class="mt-2"></textarea>
+                        
+                        <button class="btn btn-primary mt-4" onclick="saveComment()"><i class=" fa fa-solid fa-comments-o"></i> Publicar</button>
+                        
+                        <!-- <input type="submit" value="Publicar" class="btn btn-primary mt-4"> -->
+                        <!-- <label for="submitComment" class="btn btn-primary mt-4"><i class=" fa fa-solid fa-comments-o"></i> Publicar</label> -->
+                        <!-- <i class="inconSubmit fa fa-solid fa-comments-o"></i> -->
+                        <!-- <input type="submit" value="  Publicar" class="submitComment btn btn-primary mt-4">  -->
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+
+        <!-- 
+        <section id="commentsBoxEx" class="d-flex mx-auto mt-5">
+            <img src="https://secure.gravatar.com/avatar/f07de905db2517e1b7c8d218cb73878b?s=150&d=mm&r=g" alt="profilePicture" class="profilePic">
+            <div class="wrapperComment card ml-3">
+                <header class="card-header"> 
+                    <h3 class="username d-inline text-primary pl-1">Nombre</h3>
+                       <small> <i class="fa fa-solid fa-circle text-secondary"></i></small> 
+                    <h5 class="date d-inline text-secondary text-muted">Fecha</h5>
+                </header>
+                <p class="commentContent  pl-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam praesentium deserunt animi amet omnis veritatis fuga nesciunt, ipsum delectus ipsam vitae sapiente minima libero debitis dolore unde dolores quasi nulla.</p>
+            </div>
+        </section>
+        -->
+
+        <section class="commentsBox"></section>
+        
+    </main>
+
+    <template id="template-commentCard">
+        <article id="commentCard" class="d-flex mx-auto mt-5">
+            <img src="https://secure.gravatar.com/avatar/f07de905db2517e1b7c8d218cb73878b?s=150&d=mm&r=g" alt="profilePicture" class="profilePic">
+            <div class="wrapperComment card ml-3 w-100">
+                <header class="card-header"> 
+                    <h3 class="username d-inline text-primary pl-1">Nombre</h3>
+                    <!--<small> <i class="fa fa-solid fa-circle text-secondary"></i></small> -->
+                    <h5 class="date d-inline text-secondary text-muted">Fecha</h5>
+                </header>
+                <p class="commentContent  pl-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam praesentium deserunt animi amet omnis veritatis fuga nesciunt, ipsum delectus ipsam vitae sapiente minima libero debitis dolore unde dolores quasi nulla.</p>
+            </div>
+        </article>
+    </template>
+</body>
+</html>
